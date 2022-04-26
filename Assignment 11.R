@@ -56,5 +56,12 @@ fig <- plot_ly(type='pie', labels=labels, values=values,
   layout(title = 'Atmospheric Gas Makeup')
 fig
 
+Heatmap with customized colors
+
+library("RColorBrewer")
+col <- colorRampPalette(brewer.pal(10, "RdYlBu"))(256)
+heatmap(df, scale = "none", col =  col, 
+        RowSideColors = rep(c("blue", "pink"), each = 16),
+        ColSideColors = c(rep("purple", 5), rep("orange", 6)))
 
 
